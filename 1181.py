@@ -1,26 +1,35 @@
 num_of_words = int(input())
 
-words = dict()
+words = list()
+words_length = set()
 
+# 단어입력
 for i in range(num_of_words):
     word = input()
-    words[word] = len(word)
+    words.append(word)
+    words_length.add(len(word))
 
-words = dict(sorted(words.items(), key = lambda x : x[1]))
+row = max(words_length)
 
-last_value = 0
-last_key = str()
-temp_list = list()
+# 2차원 리스트 생성
+sorted_words = [[] for M in range(row)]
+sorted_words_set = [[] for M in range(row)]
 
-print(words.keys())
 
-for key, value in words.items():
-    if last_value == value:
-        temp_list.append(last_key) 
-    elif len(temp_list) != 0 and len(last_key) == len(temp_list[-1]):
-        temp_list.append(key)
+# 단어의 길이에 맞게 단어를 추가
+for i in range(num_of_words):
+    sorted_words[len(words[i]) - 1].append(words[i])
 
-    last_value = value
-    last_key = key
+# 중복제거
+for i in range(row):
+    sorted_words_set[i] = set(sorted_words[i])
+    sorted_words[i] = list(sorted_words_set[i])
 
-print(temp_list)
+# 정렬
+for i in range(row):
+    sorted_words[i].sort()
+
+# 출력
+for i in range(len(sorted_words)):
+    for j in range(len(sorted_words[i])):
+        print(sorted_words[i][j])
