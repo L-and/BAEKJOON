@@ -9,3 +9,4 @@ distance = [w - x, x, h - y, y]
 distance.sort()
 
 print(distance[0])
+#asdfasdfasdfasdf
