@@ -1,11 +1,6 @@
-num_of_words = int(input())
+a = [0 for i in range(3)]
 
-words = list()
+a = input()
 
-for i in range(num_of_words):
-    word = input()
-    words.append(word)
-
-words.sort()
-
-print(words)
+for i in range(4):
+    print(a[i],end=' ')
