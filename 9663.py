@@ -13,7 +13,7 @@ def can_attack_check(x_list, y_list, n):
 
 def bfs(graph, visited):
 
-j
+
 n = int(input())
 
 board = [[0 for _ in range(n)] for _ in range(n)]
