@@ -1,12 +1,15 @@
-user = []
+from operator import itemgetter
+
+user_list = []
 
 userCount = int(input())
 
 for i in range(userCount):
-    age, name = map(str, input().split())
-    user.append(name)
+    age, name = input().split()
+    user_list.append((int(age), str(name)))
 
-user.sort()
+user_list = sorted(user_list, key=lambda user: user[0])
 
-print(user)
+for i in range(userCount):
+    print(user_list[i][0], user_list[i][1])
 
