@@ -7,7 +7,7 @@ def binary_search(array, target, start, end):
         elif array[mid] > target:
             end = mid - 1
         else:
-            start = mid + 1
+            start = mid + 1 
     return None
 
 N = int(input())
