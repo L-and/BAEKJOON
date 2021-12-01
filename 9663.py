@@ -1,17 +1,11 @@
-from collections import 
-
-def can_attack_check(x_list, y_list, n):
-    for i in range(n):
-        for j in range(n):
-            if x_list[i] == x_list[j] or y_list[i] == y_list[j]:
-                return True
-            if x_list[i] - x_list[j] == y_list[i] - y_list[j]:
-                return True
-
-    return False
+def promising(x, y):
 
 
-def bfs(graph, visited):
+
+
+def dfs(graph, visited):
+
+
 
 
 n = int(input())
